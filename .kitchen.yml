@@ -1,0 +1,24 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+  attributes:
+    authorization:
+      sudo:
+        users:
+          - vagrant
+
+platforms:
+- name: windows-2012r2
+  transport:
+    name: winrm
+    elevated: true
+    elevated_username: System
+    elevated_password: null
+  driver_config:
+    box: criteo-windows-2012r2-standard
+
+suites:
+<%= require 'erubis'; Erubis::Eruby.new(File.read('.kitchen_suites.yml')).evaluate %>
