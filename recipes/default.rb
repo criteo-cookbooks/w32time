@@ -12,7 +12,7 @@ service 'w32time' do
 end
 
 # Command to configure w32time service
-manualpeerlist = "#{node['w32time']['ntpserver']},#{node['w32time']['flag']}"
+manualpeerlist = node['w32time']['servers'].map {|srv| "#{srv},#{node['w32time']['flag']}"}.join(' ')
 execute 'set ntp config' do
   command "w32tm /config /update /manualpeerlist:\"#{manualpeerlist}\" /syncfromflags:manual /reliable:yes"
   action :nothing
