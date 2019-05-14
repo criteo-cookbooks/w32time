@@ -7,7 +7,8 @@
 # This recipe will Configure w32time service to use ntp
 
 # Make sure w32time service is running
-service 'w32time' do
+windows_service 'w32time' do
+  run_as_user 'NT AUTHORITY\LocalService'
   action %i[enable start]
 end
 
