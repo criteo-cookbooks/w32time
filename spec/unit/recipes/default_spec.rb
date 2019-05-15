@@ -12,7 +12,7 @@ describe 'w32time::default' do
     let(:chef_run) do
       runner = ChefSpec::ServerRunner.new(
         platform: 'windows',
-        version:  '2012R2',
+        version:  '2016',
       )
       runner.converge(described_recipe)
     end

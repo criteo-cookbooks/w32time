@@ -25,5 +25,5 @@ registry_key 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Param
           { name: 'Type', type: :string, data: node['w32time']['type'] }]
   action :create
   notifies :run, 'execute[set ntp config]', :immediately
-  notifies :restart, 'service[w32time]', :immediately
+  notifies :restart, 'windows_service[w32time]', :immediately
 end
