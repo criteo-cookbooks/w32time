@@ -7,6 +7,7 @@ gem 'chefspec'
 gem 'foodcritic'
 gem 'kitchen-vagrant'
 gem 'rake'
+gem 'openssl', '>= 2.1.2'
 
 gem 'kitchen-transport-speedy'
 group :ec2 do
@@ -20,3 +21,6 @@ end
 
 # Other gems should go after this comment
 gem 'rubocop', '=0.64.0'
+
+gem "dpl"
+gem 'dpl-chef_supermarket'

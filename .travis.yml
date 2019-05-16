@@ -3,6 +3,7 @@ language: ruby
 cache: bundler
 rvm:
   - 2.4.0
+before_deploy: 'gem update openssl'
 deploy:
   edge:
   provider: chef-supermarket
