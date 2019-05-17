@@ -5,6 +5,7 @@ rvm:
   - 2.4.0
 before_deploy: 'gem update openssl'
 deploy:
+  skip_cleanup: true
   edge:
     source: criteo-forks/dpl
     branch: chef_ruby2
