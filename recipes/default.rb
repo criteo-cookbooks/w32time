@@ -8,7 +8,7 @@
 
 # Make sure w32time service is running
 windows_service 'w32time' do
-  run_as_user 'NT AUTHORITY\LocalService'
+  run_as_user 'NT AUTHORITY\LocalService' if ::Chef::VERSION.to_f >= 13.0
   action %i[enable start]
 end
 
